@@ -804,9 +804,24 @@ animation: wave-right 4s ease-in-out infinite alternate;
         }
         checkBrowser()
     </script>
-        <!-- end script -->
+    <!-- end script -->
     <script>
-        
+        document.addEventListener("DOMContentLoaded", function () {
+            // Ambil nama dari parameter ?to= di URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const namaTamu = urlParams.get('to');
+
+            if (namaTamu) {
+                // Ubah %20 atau tanda + jadi spasi
+                const namaFormatted = decodeURIComponent(namaTamu.replace(/\+/g, ' '));
+                
+                // Cari elemen tempat nama ditaruh lalu ubah isinya
+                const slotNama = document.getElementById('guestNameSlot');
+                if (slotNama) {
+                    slotNama.textContent = namaFormatted;
+                }
+            }
+        });
     </script>
 <script type="module" src="./Undangan_Pernikahan_Afifah_Miftah_files/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;6b5a163d546e4de38f11b6040ef15291&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
 
